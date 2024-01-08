@@ -1,12 +1,12 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import AboutMe from "@/components/AboutMe";
-import Ability from "@/components/Ability";
-import Technologies from "@/components/Technologies";
-import Chatbot from "@/components/Chatbot";
-import Portfolio from "@/components/Portfolio";
-import Footer from "@/components/Footer";
-import MobileNav from "@/components/MobileNav";
+import Navbar from '@/components/HomeComponents/Navbar';
+import Hero from '@/components/HomeComponents/Hero';
+import AboutMe from '@/components/HomeComponents/AboutMe';
+import Ability from '@/components/HomeComponents/Ability';
+import Technologies from '@/components/HomeComponents/Technologies';
+import Chatbot from '@/components/HomeComponents/Chatbot';
+// import Portfolio from '@/components/Portfolio';
+import Footer from '@/components/HomeComponents/Footer';
+import MobileNav from '@/components/HomeComponents/MobileNav';
 
 export default function Home() {
   return (
@@ -15,15 +15,15 @@ export default function Home() {
         <Navbar />
         <MobileNav />
       </header>
-      <main className="montserrat ">
+      <main className="montserrat">
         <Hero />
         <AboutMe />
         <Ability />
-        <Chatbot />
         <Technologies />
+        <Chatbot />
         {/* <Portfolio /> */}
       </main>
-      <footer className="">
+      <footer className="snap-end">
         <Footer />
       </footer>
     </>
