@@ -1,4 +1,5 @@
 {
+  "allUserMessage": [],
   "messageDB": [
     {
       "name": "mojtaba",
@@ -235,7 +236,5 @@
       ]
     }
   ],
-  "information": {
-    "prevAllRmessage": 3
-  }
+  "portfolios": []
 }

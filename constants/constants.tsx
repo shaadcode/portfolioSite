@@ -10,18 +10,18 @@ import vite from '@/public/techIcons/vitejs.svg';
 import jquery from '@/public/techIcons/jquery.svg';
 import npm from '@/public/techIcons/npm.svg';
 import swiperjs from '@/public/techIcons/swiperIcon.svg';
+import nextui from '@/public/techIcons/nextUI.png';
+import formik from '@/public/techIcons/Formik.png';
 
-import abilitysiconIcon from '@/public/mobileNav/construct.svg';
 import TechnologiesIcon from '@/public/mobileNav/terminal.svg';
 import portfolioIcon from '@/public/mobileNav/code-slash.svg';
-import chatbotIcon from '@/public/mobileNav/bulb.svg';
+import contactMeIcon from '@/public/mobileNav/bulb.svg';
 import personIcon from '@/public/mobileNav/person.svg';
 
 import telegramIcon from '@/public/contactMeIcon/telegram.svg';
 import linkedinIcon from '@/public/contactMeIcon/linkedin.svg';
 import gmailIcon from '@/public/contactMeIcon/gmail.svg';
 import telephoneIcon from '@/public/contactMeIcon/telephone.svg';
-import { title } from 'process';
 
 export const navItem = [
   { id: 1, href: '/#aboutMe', title: 'درباره من' },
@@ -30,58 +30,54 @@ export const navItem = [
   { id: 4, href: '/#contactMe', title: 'ارتباط با من' },
 ];
 
-export const abilitys = [
+export const WorkSamples = [
   {
     id: 1,
     title: 'سرعت بالای سایت',
-    content:
-      'به دلیل اجرای تکنیک های مختلف بهینه سازی و کاهش حجم فایل پروژه سرعت بارگذاری سایت شما به طور قابل توجه ای کاهش پیدا میکنه!',
+    link: '#',
   },
   {
     id: 2,
     title: 'بهینه سازی عملکرد',
-    content:
-      'پیروی از اصول بهینه سازی و کدنویسی که باعث میشه سایت شما از لحاظ عملکردی به بالاترین حد خودش برسه!',
+    link: '#',
   },
   {
     id: 3,
     title: 'طراحی واکنشگرا',
-    content:
-      'به دلیل استفاده از تکنیک های واکنش گرایی سایت شما هم در دستگاه های تلفن همراه و هم در دستگاه های کامپیوتر و لپ تاپ به خوبی نمایش داده میشه!',
+    link: '#',
   },
   {
     id: 4,
     title: 'سئو پایه سایت',
-    content:
-      'سایت ها بر اساس معیار های کلیدی سئو توسعه داده میشوند. سایت شما به محض استقرار میتواند به سرعت توسط گوگل شناسایی شود تا در نتایج جست و جو قرار گیرد!',
+    link: '#',
   },
   {
     id: 5,
     title: 'رتبه لایت هوس بالا',
-    content:
-      'لایت هوس یکی از معیار های کیفیت سایت است که قبل از ارائه پروژه به کارفرما، به طور مرتب بررسی میشود!',
+    link: '#',
   },
   {
     id: 6,
     title: 'سازگاری با مرورگر ها',
-    content:
-      'ساختار سایت به گونه ای طراحی میشود که در تمام مرورگر ها و در نسخه های مختلف هر مرورگر به درستی اجرا شود ',
+    link: '#',
   },
 ];
 
 export const useTechnologies = [
-  { id: 1, title: 'REACT.JS', image: react, color: '[#61DAFB]' },
-  { id: 2, title: 'NEXT.JS', image: next, color: '[#000000]' },
-  { id: 3, title: 'HTML', image: html, color: '[#E34F26]' },
-  { id: 4, title: 'CSS', image: css, color: '[#1C88C7]' },
-  { id: 5, title: 'JAVASCRIPT', image: js, color: '[#FFDE25]' },
-  { id: 6, title: 'TYPESCRIPT', image: ts, color: '[#007ACC]' },
-  { id: 7, title: 'BOOTSTRAP', image: bootstrap, color: '[#7952B3]' },
-  { id: 8, title: 'TAILWIND', image: tailwind, color: '[#06B6D4]' },
-  { id: 9, title: 'VITE', image: vite, color: '[#7F83FF]' },
-  { id: 10, title: 'JQUERY', image: jquery, color: '[#1266A9]' },
-  { id: 11, title: 'NPM', image: npm, color: '[#CB3837]' },
-  { id: 12, title: 'SWIPER.JS', image: swiperjs, color: '[#0080FF]' },
+  { id: 1, title: 'REACT.JS', image: react },
+  { id: 2, title: 'NEXT.JS', image: next },
+  { id: 3, title: 'HTML', image: html },
+  { id: 4, title: 'CSS', image: css },
+  { id: 5, title: 'JAVASCRIPT', image: js },
+  { id: 6, title: 'TYPESCRIPT', image: ts },
+  { id: 7, title: 'BOOTSTRAP', image: bootstrap },
+  { id: 8, title: 'TAILWIND', image: tailwind },
+  { id: 9, title: 'VITE', image: vite },
+  { id: 10, title: 'JQUERY', image: jquery },
+  { id: 11, title: 'NPM', image: npm },
+  { id: 12, title: 'SWIPER.JS', image: swiperjs },
+  { id: 13, title: 'NEXT UI', image: nextui },
+  { id: 14, title: 'FORMIK', image: formik },
 ];
 
 export const questions = [
@@ -131,11 +127,10 @@ export const questions = [
 ];
 
 export const mobileNavIcon = [
-  { id: 1, src: personIcon, href: '#' },
-  { id: 2, src: abilitysiconIcon, href: '#' },
-  // { id: 3, src: portfolioIcon, href: "#" },
-  { id: 4, src: chatbotIcon, href: '#' },
-  { id: 5, src: TechnologiesIcon, href: '#' },
+  { id: 1, src: personIcon, href: '/#aboutMe' },
+  { id: 2, src: portfolioIcon, href: '/#portfolio' },
+  { id: 4, src: TechnologiesIcon, href: '/#technologies' },
+  { id: 3, src: contactMeIcon, href: '/#contactMe' },
 ];
 
 export const contactMe = [

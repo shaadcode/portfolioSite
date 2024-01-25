@@ -2,22 +2,20 @@ import { useEffect, useState } from 'react';
 
 const Typewriter = ({ userAnswer }: { userAnswer: string }) => {
   const [typedText, setTypedText] = useState('');
+  let i = 0;
 
   useEffect(() => {
     setTypedText('');
-
-    let i = 0;
-    const writer = setInterval(() => {
-      setTypedText((prev) => prev + userAnswer[i - 1]);
-      ++i;
-      if (i === userAnswer.length) {
+    const writer = setInterval(async () => {
+      if (i < userAnswer.length) {
+        setTypedText((prev) => prev + userAnswer[i - 1]);
+        i++;
+      } else {
         clearInterval(writer);
       }
     }, 25);
 
-    return () => {
-      clearInterval(writer);
-    };
+    return () => clearInterval(writer);
   }, [userAnswer]);
 
   return <span>{typedText}</span>;

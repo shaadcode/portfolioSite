@@ -1,27 +1,27 @@
-import Navbar from '@/components/HomeComponents/Navbar';
-import Hero from '@/components/HomeComponents/Hero';
-import AboutMe from '@/components/HomeComponents/AboutMe';
-import Ability from '@/components/HomeComponents/Ability';
-import Technologies from '@/components/HomeComponents/Technologies';
-import Chatbot from '@/components/HomeComponents/Chatbot';
-// import Portfolio from '@/components/Portfolio';
-import Footer from '@/components/HomeComponents/Footer';
-import MobileNav from '@/components/HomeComponents/MobileNav';
+import {
+  Navbar,
+  Hero,
+  AboutMe,
+  Technologies,
+  Chatbot,
+  Footer,
+  MobileNav,
+  Portfolio,
+} from '@/constants/ShortImport';
 
 export default function Home() {
   return (
     <>
-      <header className="flex items-center justify-center">
+      <header className="flexCenter">
         <Navbar />
         <MobileNav />
       </header>
       <main className="montserrat">
         <Hero />
         <AboutMe />
-        <Ability />
+        <Portfolio />
         <Technologies />
         <Chatbot />
-        {/* <Portfolio /> */}
       </main>
       <footer className="snap-end">
         <Footer />

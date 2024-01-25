@@ -3,7 +3,6 @@ import { Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import { InputField } from '../common/form/InputField';
 import { toast } from 'react-toastify';
-import { getAuthToken, setAuthToken } from '@/utils/authService';
 import { useRouter } from 'next/navigation';
 
 const LoginSchema = Yup.object().shape({
@@ -18,21 +17,22 @@ interface FormProps {
 
 const Login = () => {
   const router = useRouter();
-  const handleLogin = (values: FormProps) => {
-    if (
-      values.username === process.env.NEXT_PUBLIC_ADMIN_USERNAME &&
-      values.password === process.env.NEXT_PUBLIC_ADMIN_PASSWORD
-    ) {
-      setAuthToken();
-      router.push('/shaadcodePanel');
-      return;
-    }
 
-    toast.error('نام کاربری یا کلمه عبور نادرست است');
+  const adminUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME;
+  const adminPassword = process.env.NEXT_PUBLIC_ADMIN_PASSWORD;
+  const adminTokenKey = process.env.NEXT_PUBLIC_ADMIN_TOKEN_KEY;
+
+  const handleLogin = async (values: FormProps) => {
+    if (values.username === adminUsername && values.password === adminPassword) {
+      await new Promise((resolve) => setTimeout(resolve, 1));
+      localStorage.setItem('accessKey', adminTokenKey || '');
+      router.push('/shaadcodePanel');
+    }
+    toast.error('نام کاربری یا کلمه عبور اشتباه است!');
   };
 
   return (
-    <div className={`fixed z-50 flex h-full w-full items-center justify-center`}>
+    <div className="flexCenter fixed z-50 h-full w-full">
       <Formik
         validationSchema={LoginSchema}
         initialValues={
@@ -54,7 +54,7 @@ const Login = () => {
             placeholder="کلمه‌عبور"
           />
 
-          <div className="flex w-full items-center justify-center overflow-hidden rounded-md">
+          <div className="flexCenter w-full overflow-hidden rounded-md">
             <button
               className="titleBtnLogIn w-full bg-slate-600 py-3 font-bold text-white"
               type="submit">

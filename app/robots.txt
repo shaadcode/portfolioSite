@@ -1,0 +1,5 @@
+User-Agent: *
+Allow: /
+Disallow: /shaadcodePanel
+
+Sitemap: https://shaadcode.ir/sitemap.xml
